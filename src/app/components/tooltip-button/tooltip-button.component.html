@@ -1,1 +1,4 @@
-<p>tooltip-button works!</p>
+<div class="tooltip-button-container">
+    <button class="tooltip-button" (click)="toggleTooltip()">{{tooltip.buttonText}}</button>
+    <div class="tooltip-text" *ngIf="tooltip.open">{{tooltip.tooltipText}}</div>
+</div>

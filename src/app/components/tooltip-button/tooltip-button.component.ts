@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tooltip-button',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TooltipButtonComponent implements OnInit {
 
+  @Input() tooltip: any;
+  @Output() toggleTooltips = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  public toggleTooltip(): void{
+    this.toggleTooltips.emit(this.tooltip.id);
+  };
 
 }
