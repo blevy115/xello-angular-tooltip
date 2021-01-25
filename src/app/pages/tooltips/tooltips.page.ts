@@ -8,15 +8,17 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class TooltipsPage implements OnInit {
   
   tooltips: any[] = [ // Sets Tooltip info
-    {id: 0, buttonText:'Button 1', tooltipText:'Tooltip for Button 1', open: false}, 
-    {id: 1, buttonText:'Button 2', tooltipText:'Tooltip for Button 2', open: false}
+    {id: 0, buttonText:'Button A', tooltipText:'Tooltip for Button A', open: false}, 
+    {id: 1, buttonText:'Button B', tooltipText:'Tooltip for Button B', open: false}
   ];
+
+  classNamesToClick: string[] = ['tooltip-text-top', 'tooltip-text-bottom', 'tooltip-button']
 
   // Determines if Mouse click is in or outside tooltips
   @HostListener('document:click', ['$event'])
   documentClick(event: MouseEvent) {
       let clickedElement = (event.target as Element);
-      if (clickedElement.className != 'tooltip-text' && clickedElement.className != 'tooltip-button') {
+      if (!this.classNamesToClick.includes(clickedElement.className)){
         this.toggleTooltips(-1); // close all tooltips
       }
   }

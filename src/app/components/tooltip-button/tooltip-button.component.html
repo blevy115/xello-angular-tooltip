@@ -1,4 +1,8 @@
 <div class="tooltip-button-container">
-    <button class="tooltip-button" (click)="toggleTooltip()">{{tooltip.buttonText}}</button>
-    <div class="tooltip-text" *ngIf="tooltip.open">{{tooltip.tooltipText}}</div>
+    <button #tooltipButton class="tooltip-button" (click)="toggleTooltip()">{{tooltip.buttonText}}</button>
+    <div 
+        #tooltipText 
+        [className]="tooltipOnTop ? 'tooltip-text-top' : 'tooltip-text-bottom'" 
+        *ngIf="tooltip.open">{{tooltip.tooltipText}}
+    </div>
 </div>

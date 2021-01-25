@@ -1,0 +1,38 @@
+%tooltip-text
+        width: 150px
+        background-color: black
+        color: #fff
+        text-align: center
+        border-radius: 6px
+        padding: 5px 0
+        position: absolute
+        z-index: 1
+        left: 50%
+        margin-left: -75px 
+
+        &:after
+            content: ""
+            position: absolute
+            left: 50%
+            margin-left: -5px
+            border-width: 5px
+            border-style: solid
+
+.tooltip-button-container
+    position: relative
+
+    .tooltip-text-top
+        @extend %tooltip-text
+        bottom: 150%
+
+        &:after
+            top: 100%
+            border-color: black transparent transparent transparent
+
+    .tooltip-text-bottom
+        @extend %tooltip-text
+        top: 150% 
+
+        &:after
+            bottom: 100%
+            border-color: transparent transparent black transparent
