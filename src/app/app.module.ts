@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TooltipButtonComponent } from './components/tooltip-button/tooltip-button.component';
 import { TooltipsPage } from './pages/tooltips/tooltips.page';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TooltipButtonComponent,
-    TooltipsPage
+    TooltipsPage,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
