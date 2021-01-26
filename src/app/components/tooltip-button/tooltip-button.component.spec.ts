@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TooltipButtonComponent } from './tooltip-button.component';
+import { Tooltip } from '../../interfaces/tooltip.interface';
+
 
 describe('TooltipButtonComponent', () => {
   let component: TooltipButtonComponent;
@@ -16,6 +18,8 @@ describe('TooltipButtonComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TooltipButtonComponent);
     component = fixture.componentInstance;
+    let testTooltip: Tooltip = {id: 0, buttonText:'Test Button', tooltipText:'Test Tooltip', open: false};
+    component.tooltip = testTooltip;
     fixture.detectChanges();
   });
 
