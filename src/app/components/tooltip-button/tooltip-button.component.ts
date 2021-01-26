@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter, HostListener, ViewChild, ElementRef } from '@angular/core';
+import  { Tooltip } from '../../interfaces/tooltip.interface';
 
 @Component({
   selector: 'app-tooltip-button',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter, HostListener, ViewChild
 })
 export class TooltipButtonComponent implements OnInit {
 
-  @Input() tooltip: any;
+  @Input() tooltip: Tooltip;
   @Output() toggleTooltips = new EventEmitter<number>();
 
   @ViewChild('tooltipButton', {static: false}) private tooltipButton: ElementRef<HTMLDivElement>;
