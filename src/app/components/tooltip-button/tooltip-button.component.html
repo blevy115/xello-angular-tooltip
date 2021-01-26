@@ -1,8 +1,9 @@
 <div class="tooltip-button-container">
-    <button #tooltipButton class="tooltip-button" (click)="toggleTooltip()">{{tooltip.buttonText}}</button>
+    <button #tooltipButton [attr.aria-label]="'Tooltip Button for ' + tooltip.buttonText" class="tooltip-button" (click)="toggleTooltip()">{{tooltip.buttonText}}</button>
     <div 
         #tooltipText 
-        [className]="tooltipOnTop ? 'tooltip-text-top' : 'tooltip-text-bottom'" 
+        [className]="tooltipOnTop ? 'tooltip-text-top' : 'tooltip-text-bottom'"
+        [attr.aria-label]="'Tooltip Text for ' + tooltip.buttonText" 
         *ngIf="tooltip.open">{{tooltip.tooltipText}}
     </div>
 </div>

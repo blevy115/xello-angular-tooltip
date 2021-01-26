@@ -1,5 +1,5 @@
-<h1 id="page-title">Brandon Levy's Xello Tooltip Challenge</h1>
-<div id="tooltip-container">
+<h1 id="page-title" aria-label="Page Title">Brandon Levy's Xello Tooltip Challenge</h1>
+<div id="tooltip-container" aria-label="Tooltips Container">
 <app-tooltip-button *ngFor="let tooltip of tooltips"
     [tooltip] = "tooltip"
     (toggleTooltips) = "toggleTooltips($event)"
