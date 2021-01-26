@@ -1,8 +1,24 @@
+$layout-changing-breakpoint: 550px
+
 #tooltip-container
     display: flex 
     flex-direction: row 
     justify-content: space-around
-    margin: 3em auto 95vh auto // Used 95vh to make page scrollable
+    margin: 4em auto 95vh auto // Used 95vh to make page scrollable
 
 #page-title
     text-align: center
+    font-family: 'Raleway', Helvetica, Arial, sans-serif
+    font-weight: bolder
+
+
+@media (max-width: $layout-changing-breakpoint)
+    #page-title
+        margin: 0 0.25em
+
+    #tooltip-container
+        flex-direction: column
+        align-items: center
+
+        app-tooltip-button
+            margin: 3em auto

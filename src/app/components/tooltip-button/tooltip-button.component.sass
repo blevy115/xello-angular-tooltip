@@ -8,7 +8,9 @@
         position: absolute
         z-index: 1
         left: 50%
-        margin-left: -75px 
+        margin-left: -75px
+        font-family: 'Goudy Bookletter 1911', Georgia, Times, serif
+        font-weight: bold 
 
         &:after
             content: ""
@@ -20,6 +22,10 @@
 
 .tooltip-button-container
     position: relative
+
+    .tooltip-button
+        font-family: 'Goudy Bookletter 1911', Georgia, Times, serif
+        font-weight: 500 
 
     .tooltip-text-top
         @extend %tooltip-text
