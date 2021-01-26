@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import  { Tooltip } from '../../interfaces/tooltip.interface';
 
 @Component({
   selector: 'app-tooltips',
@@ -7,9 +8,9 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class TooltipsPage implements OnInit {
   
-  tooltips: any[] = [ // Sets Tooltip info
+  tooltips: Tooltip[] = [ // Sets Tooltip info when building new buttons id needs to be unique
     {id: 0, buttonText:'Button A', tooltipText:'Tooltip for Button A', open: false}, 
-    {id: 1, buttonText:'Button B', tooltipText:'Tooltip for Button B', open: false}
+    {id: 1, buttonText:'Button B', tooltipText:'Tooltip for Button B', open: false},
   ];
 
   classNamesToClick: string[] = ['tooltip-text-top', 'tooltip-text-bottom', 'tooltip-button']
