@@ -1,6 +1,6 @@
 <h1 id="page-title" aria-label="Page Title">Xello Tooltip Challenge</h1>
 <div id="tooltip-container" aria-label="Tooltips Container">
-<app-tooltip-button *ngFor="let tooltip of tooltips"
+<app-tooltip-button *ngFor="let tooltip of tooltips | async"
     [tooltip] = "tooltip"
     (toggleTooltips) = "toggleTooltips($event)"
 ></app-tooltip-button>

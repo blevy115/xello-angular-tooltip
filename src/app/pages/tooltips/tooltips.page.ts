@@ -1,5 +1,10 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import  { Tooltip } from '../../interfaces/tooltip.interface';
+import { Store } from '@ngrx/store';
+import * as TooltipActions from 'src/app/actions/tooltip.actions';
+import  { Tooltip } from '../../models/tooltip.model';
+import { AppState } from './../../app.state';
+import { Observable } from 'rxjs/internal/Observable';
+
 
 @Component({
   selector: 'app-tooltips',
@@ -8,13 +13,9 @@ import  { Tooltip } from '../../interfaces/tooltip.interface';
 })
 export class TooltipsPage implements OnInit {
   
-  tooltips: Tooltip[] = [ // Sets Tooltip info when building new buttons id needs to be unique
-    {id: 0, buttonText:'Button A', tooltipText:'Tooltip for Button A', open: false}, 
-    {id: 1, buttonText:'Button B', tooltipText:'Tooltip for Button B', open: false},
-  ];
-
+  tooltips: Observable<Tooltip[]>
   classNamesToClick: string[] = ['tooltip-text-top', 'tooltip-text-bottom', 'tooltip-button']
-
+  
   // Determines if Mouse click is in or outside tooltips
   @HostListener('document:click', ['$event'])
   documentClick(event: MouseEvent) {
@@ -30,18 +31,14 @@ export class TooltipsPage implements OnInit {
     this.toggleTooltips(-1);
   }
 
-  constructor() { }
+  constructor(private store: Store<AppState>) {
+    this.tooltips = store.select('tooltip')
+   }
 
   ngOnInit(): void {
   }
 
   public toggleTooltips(tooltipId : number){
-    this.tooltips.map(tooltip => {
-      if (tooltip.id == tooltipId) {
-        tooltip.open = !tooltip.open;
-      } else {
-        tooltip.open = false;
-      }
-    });
+    this.store.dispatch(new TooltipActions.TooltipToggle(tooltipId))
   }
 }

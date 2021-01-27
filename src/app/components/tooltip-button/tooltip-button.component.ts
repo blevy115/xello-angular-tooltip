@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter, HostListener, ViewChild, ElementRef } from '@angular/core';
-import  { Tooltip } from '../../interfaces/tooltip.interface';
+import { Tooltip } from './../../models/tooltip.model';
 
 @Component({
   selector: 'app-tooltip-button',
