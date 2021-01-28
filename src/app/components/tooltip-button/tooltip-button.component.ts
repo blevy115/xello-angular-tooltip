@@ -20,8 +20,8 @@ export class TooltipButtonComponent implements OnInit {
   isScrolledIntoView(){
     if (this.tooltipButton && this.tooltipText){
       const rect = this.tooltipButton.nativeElement.getBoundingClientRect();
-      const tootlTipHeight = this.tooltipText.nativeElement.offsetHeight + 10 // height of tooltip Text Element + distance bewteen button and tooltip
-      this.tooltipOnTop = rect.top > tootlTipHeight;
+      const tooltipHeight = this.tooltipText.nativeElement.offsetHeight + 10 // height of tooltip Text Element + distance bewteen button and tooltip
+      this.tooltipOnTop = rect.top > tooltipHeight;
     }
   }
 
