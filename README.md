@@ -1,4 +1,12 @@
-# TooltipChallenge
+# Xello Tooltip Challenge
+
+This is my submission for the Xello Front-End Engineering Test.  It is an Angular Front End application where Buttons can Toggle Tooltips.
+
+In order to run the Application just clone the repo locally and then run `npm install` to load the required node modules.
+
+There is also an ngrx branch which can be accessed by typing `git checkout ngrx` in the console and then running `npm install` to install the ngrx packages.  This branch uses an ngrx store for state managment with actions and reducers.
+
+The rest of the README was generated when the project was created using the Angular CLI, Enjoy!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
 
