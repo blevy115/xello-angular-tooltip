@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TooltipButtonComponent } from './tooltip-button.component';
-import { Tooltip } from '../../interfaces/tooltip.interface';
+import { Tooltip } from './../../models/tooltip.model';
 
 
 describe('TooltipButtonComponent', () => {
