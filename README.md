@@ -2,7 +2,7 @@
 
 This is my submission for the Xello Front-End Engineering Test.  It is an Angular Front End application where Buttons can Toggle Tooltips.
 
-In order to run the Application just clone the repo locally and then run `npm install` to load the required node modules.
+In order to run the application just clone the repo locally and then run `npm install` to load the required node modules and then run `ng serve` to start the application.  Navigate to `http://localhost:4200/tooltips` to see the application.
 
 There is also an ngrx branch which can be accessed by typing `git checkout ngrx` in the console and then running `npm install` to install the ngrx packages.  This branch uses an ngrx store for state managment with actions and reducers.
 
